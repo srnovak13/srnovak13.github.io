@@ -14,9 +14,10 @@
         <!--NAVBAR-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
         </div>
 
         <!--Breaks to add space navbar and heading-->
@@ -34,10 +35,10 @@
 
         <!--Video Text Overlay-->
         <div class="Video_Text">
-            <h1 class="white-text">Steve Novak's Portfolio</h1>
+            <h1 style="color: white;">Steve Novak's Portfolio</h1>
             <strong>
-                <img src="images/srnprofile.jpeg" class="profile_pic">
-                <p class="center">
+                
+                <center>
                     <q> The computer programmer is a creater of universes for which he alone is the lawgiver.
                         <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
                         <br>field of battle and to command such unswervingly dutiful actors or troops.
@@ -47,9 +48,67 @@
                     <br> My name is Steve Novak. 
                     <br> Welcome to my portfolio website.
                     <br> Thank you for stopping by and enjoy!
-                </p>
+                </center>
             </strong>
         </div>
+        <!--SLIDESHOW SECTION-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">1 / 6</div>
+                        <img class="Slide_Show_Images" src="images/srnprofile.jpeg" style="width: 100%">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">2 / 6</div>
+                        <img class="Slide_Show_Images" src="images/htmlcssjs-overview.png" style="width: 100%">
+                        <div class="text">I am a full-stack software developer,
+                            <br>trained in:<br>HTML, CSS, JavaScript,
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">3 / 6</div>
+                        <img class="Slide_Show_Images" src="images/python2.jpg" style="width: 100%">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">4 / 6</div>
+                        <img class="Slide_Show_Images" src="images/csharp.png" style="width: 100%">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">5 / 6</div>
+                        <img class="Slide_Show_Images" src="images/sql.png" style="width: 100%">
+                        <div class="text">back end development, databases, & SQL</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="Slide_Number">6 / 6</div>
+                        <img class="Slide_Show_Images" src="images/laptop.jpg" style="width: 100%">
+                        <div class="text"><a onclick="openForm()" href ="#Contact" style="color:white";>Contact me now!</a></div>
+                    </div>
+                
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095</a>
+                </div>
+                <br>
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                    </div>
+            </div>       
+        </div>
+
 
         <!--ABOUT SECTION-->
         <div class="Row" id="About">
@@ -64,13 +123,13 @@
                 <p>
                     I am a software developer who loves to code! Born and raised in Vermont and now a resident of Oregon.
                     <br>In my spare time, I enjoy traveling, photography, and playing guitar.
-                    <br>
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.
-                    <br>
                     <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
                 </p>
             </div>
         </div>
+                    
+                    
 
         <!--GitHub Section-->
         <div class="Row" id="GitHub">
@@ -90,26 +149,25 @@
         </div>
 
         <!--Contact section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="./images/contact_2.jpg" alt="Contact">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <form action="https://formspree.io/f/xwkwwzza" method="POST">
-                    <label>Name</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">   
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xwkwwzza" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Type your message here" name="message">
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
-
         <!--Footer section-->
         <footer>
             <p>
@@ -120,50 +178,51 @@
             
         </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <script src="js/portfolio.js"></script>
 
     </body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
