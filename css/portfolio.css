@@ -49,7 +49,7 @@ p:hover {
     color: #00004d;
 }
 
-center {
+.center {
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: center;
     letter-spacing: .1vw;
@@ -58,7 +58,7 @@ center {
     padding-right: 5vw;
 }
 
-center:hover {
+.center:hover {
     transition: transform 2s;
     transform: scale(1.1);
 }
@@ -96,6 +96,7 @@ img:hover {
 footer {
     padding: 2%;
     background-color: rgb(117, 111, 111);
+    
     
 }
 
